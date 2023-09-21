@@ -1,4 +1,4 @@
-log_file =/tmp/expense.log
+log_file=/tmp/expense.log
 
 download_and_extract() {
   echo Download $component Code
