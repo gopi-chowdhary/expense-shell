@@ -7,8 +7,9 @@ if [ $? -eq 0 ]; then
    echo -e "\e[32mSUCCESS\e[0m"
 else
    echo -e "\e[31mFAILED\e[0m"
+   exit
 fi
-exit
+
 
 echo Install NodeJs
 dnf install nodejs -y &>>$log_file
@@ -16,8 +17,9 @@ if [ $? -eq 0 ]; then
    echo -e "\e[32mSUCCESS\e[0m"
 else
    echo -e "\e[31mFAILED\e[0m"
+   exit
 fi
-exit
+
 
 echo Copy Backend Service file
 cp backend.service /etc/systemd/system/backend.service &>>$log_file
@@ -25,8 +27,9 @@ if [ $? -eq 0 ]; then
    echo -e "\e[32mSUCCESS\e[0m"
 else
    echo -e "\e[31mFAILED\e[0m"
+   exit
 fi
-exit
+
 
 echo Add application user
 useradd expense &>>$log_file
@@ -34,8 +37,9 @@ if [ $? -eq 0 ]; then
    echo -e "\e[32mSUCCESS\e[0m"
 else
    echo -e "\e[31mFAILED\e[0m"
+   exit
 fi
-exit
+
 
 echo clean app content
 rm -rf /app &>>$log_file
