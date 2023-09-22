@@ -17,7 +17,10 @@ stat_check
 
 
 echo Add application user
-useradd expense &>>$log_file
+id expense &>>$log_file
+if [ $? -ne0 ]; then
+   useradd expense &>>$log_file
+fi
 stat_check
 
 
